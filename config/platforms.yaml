@@ -1,0 +1,48 @@
+platforms:
+  youtube:
+    video_dimensions: { width: 1920, height: 1080 }
+    thumbnail_dimensions: { width: 1280, height: 720 }
+    duration_range: { min_minutes: 10, max_minutes: 15 }
+    cadence: weekly
+    anchor_days: [1, 8, 15, 22, 29]
+    tone: in-depth, tutorial-style, diagram walkthroughs
+    prompt_template: config/prompts/youtube_script.md
+
+  substack:
+    word_count: { min: 1500, max: 2500 }
+    cadence: twice_weekly
+    substack_days: [1, 6, 8, 11, 15, 17, 19, 22, 24, 26, 28, 30]
+    tone: analytical, opinionated, citable
+    prompt_template: config/prompts/substack_article.md
+
+  linkedin:
+    word_count: { min: 600, max: 1200 }
+    cadence: 3-4x per week
+    tone: thought leadership, peer-to-peer
+    prompt_template: config/prompts/linkedin_post.md
+
+  instagram:
+    carousel:
+      slide_count: { min: 6, max: 10 }
+      dimensions: { width: 1080, height: 1080 }
+    reel:
+      duration_seconds: { min: 30, max: 60 }
+      dimensions: { width: 1080, height: 1920 }
+    cadence: daily
+    tone: visual, punchy captions, one idea per slide
+    prompt_template: config/prompts/instagram_carousel.md
+
+  tiktok:
+    duration_seconds: { min: 30, max: 60 }
+    dimensions: { width: 1080, height: 1920 }
+    cadence: daily
+    tone: fast, provocative hook in first 3s, one concept
+    prompt_template: config/prompts/tiktok_script.md
+
+  x:
+    thread:
+      tweet_count: { min: 5, max: 8 }
+      chars_per_tweet: 280
+    cadence: daily
+    tone: punchy, quotable, concrete takeaway
+    prompt_template: config/prompts/twitter_thread.md
