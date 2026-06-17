@@ -15,7 +15,9 @@ _client = None
 def _get_client() -> anthropic.Anthropic:
     global _client
     if _client is None:
-        _client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        # Use ANTHROPIC_API_KEY from env if present; otherwise the SDK uses session credentials.
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        _client = anthropic.Anthropic(api_key=api_key) if api_key else anthropic.Anthropic()
     return _client
 
 
